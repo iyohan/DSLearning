@@ -1,33 +1,9 @@
-// C++ for C Coders & Data Structures
-// Lecture note by idebtor@gmail.com
-/*
-* lab02.cpp  & lab02a.cpp
-* This brute force version of Selection Sort that takes O(n^2).
-*
-* Compilation:
-*   g++ lab02.cpp -o lab02
-*   g++ lab02a.cpp -o lab02a
-*
-* Lab: (1) Improve the following code in C first. Name the file as lab02a.cpp
-*      (2) Then recode it in C++. Name the file as lab02b.cpp
-*
-*	1. Understand the following C code.
-*   - #if
-*		- const
-*		- rand()
-*		- % operator
-*  2. Use dynamic allocation for the array
-*		- Add assert after malloc()
-*		- Add free()
-*  3. NMN principle - no magic number
-*     DRY principle - don't repeat yourself
-*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <cassert>
 #include <time.h>
-#include <assert.h>
+using namespace std;
 
 void selectionSort(int *list, int n);
 void printList(int* list, int n);
@@ -44,17 +20,17 @@ int main() {
 	srand(time(NULL));
 	list = generateRandList(N);
 
-	printf("UNSORTED: \n");
-	printList(list, N);    // Task2
+	cout << "UNSORTED: " << endl;
+	printList(list, N);
 
 	selectionSort(list, N);
 
-	printf("SORTED: \n");
-	printList(list, N);    // Task2
+	cout << "SORTED: " << endl;
+	printList(list, N);
 
-	free(list);
+	delete[] list;
 	// system("pause");
-	printf("Happy Coding~~\n");
+	cout << "Happy Coding~~" << endl;
 }
 #endif
 
@@ -79,7 +55,7 @@ int* generateRandList(int n)
 	int i, j;
     int* randList = NULL;
 
-	randList = (int*)malloc(sizeof(int) * n);
+	randList = new (nothrow) int[n];
     assert(randList != NULL);
 
 	for(i = 0; i < n; i++){
@@ -103,7 +79,7 @@ void printList(int* list, int n)
 {
 
 	for(int i = 0; i < n; i++){
-		printf("%d ", list[i]);
+		cout << list[i] << " ";
 	}
-	printf("\n");
+	cout << endl;
 }
