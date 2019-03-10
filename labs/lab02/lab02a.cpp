@@ -53,8 +53,8 @@ int main() {
 	printList(list, N);    // Task2
 
 	free(list);
-	// system("pause");
 	printf("Happy Coding~~\n");
+	// system("pause");
 }
 #endif
 
@@ -101,7 +101,6 @@ int* generateRandList(int n)
 
 void printList(int* list, int n)
 {
-
 	for(int i = 0; i < n; i++){
 		printf("%d ", list[i]);
 	}

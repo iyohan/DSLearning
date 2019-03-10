@@ -16,7 +16,6 @@ int main() {
 	int *list = NULL;
 	const int N = 50;
 
-
 	srand(time(NULL));
 	list = generateRandList(N);
 
@@ -77,7 +76,6 @@ int* generateRandList(int n)
 
 void printList(int* list, int n)
 {
-
 	for(int i = 0; i < n; i++){
 		cout << list[i] << " ";
 	}
