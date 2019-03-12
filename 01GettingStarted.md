@@ -43,9 +43,9 @@ http://stackoverflow.com/questions/39185248/eclipse-mingw-c-cannot-find-lpthread
 2. Start Atom.
 3. Install some of essential packages recommended for C/C++ programmers listed below:
     - Autosave
-      - Autosaves editor when they lose focus, are destroyed, or when the window is closed. This package is disabled by default and can be enabled via the autosave.enabled config setting or from the Autosave section of the Settings view.
+      - It automatically saves files when the editors loses focus, are destroyed, or when the window is closed. Believe or not, it is disabled by default. __You must check `enabled`__ in config setting or from the Autosave section of the Settings view.
     - Platformio-ide-terminal
-      - On successful installation, you will see a +sign at bottom-left corner of the editor. Click + sign to open a console.
+      - On successful installation, you will see a +sign at the bottom-left corner of the editor. Click + sign to open a console.
     - File-icons
     - Mini-maps
     - Markdown-preview
@@ -98,6 +98,25 @@ After installation of GitHub Desktop, be a member if already not.
       ```
       C:\Users\user\AppData\Roaming\GitHub Desktop\window-state.json
       ```
+
+      __JoyNote__: How do I force `git pull` to overwrite local files?
+
+      - Go to the ~/nowic folder.
+      - Open a console and run the following two commands.
+      ```
+      git fetch --all
+      git reset --hard origin/master
+      ```
+      __Explanation:__ `git fetch` downloads the latest from remote without trying to merge or rebase anything. Then the `git reset` resets the master branch to what you just fetched. The `--hard` option changes all the files in your working tree to match the files in origin/master
+      __Causion:__ If you have any local changes, they will be lost. With or without --hard option, any local commits that haven't been pushed will be lost.
+
+      __JoyNote__: How do I keep my local files clean after trials?
+      - Go to the ~/nowic folder.
+      - Open a console and run the following command.
+      ```
+      git clean -f
+      ```
+      __Explanation:__ To delete all untracked files.
 
 ## Are ready for 'Hello World!' program in C++?
   - Open a console. (may use cmd or powershell)  

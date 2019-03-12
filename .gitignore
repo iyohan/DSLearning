@@ -8,7 +8,7 @@
 
 #Visual Studio files
 *.[Oo]bj
-*.exe
+#*.exe
 *.pdb
 *.user
 *.aps
@@ -43,7 +43,6 @@ Ankh.NoLoad
 *.com
 *.class
 *.dll
-*.exe
 *.o
 *.so
 
