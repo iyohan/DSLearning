@@ -9,7 +9,7 @@ void selectionSort(int *list, int n);
 void printList(int* list, int n);
 int* generateRandList(int n);
 
-#if 1
+#if 0
 int main() {
 	//int list[] = { 3, 4, 1, 7, 9, 6, 5, 2, 8, 0 };
 	//const int N = sizeof(list) / sizeof(list[0]);	// Task1
