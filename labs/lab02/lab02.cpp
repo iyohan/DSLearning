@@ -26,41 +26,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
-#include <assert.h>
 
-void selectionSort(int *list, int n);
-void printList(int* list, int n);
-int* generateRandList(int n);
-
-#if 1
-int main() {
-	//int list[] = { 3, 4, 1, 7, 9, 6, 5, 2, 8, 0 };
-	//const int N = sizeof(list) / sizeof(list[0]);	// Task1
-	int *list = NULL;
-	const int N = 50;
-
-
-	srand(time(NULL));
-	list = generateRandList(N);
-
-	printf("UNSORTED: \n");
-	printList(list, N);    // Task2
-
-	selectionSort(list, N);
-
-	printf("SORTED: \n");
-	printList(list, N);    // Task2
-
-	free(list);
-	// system("pause");
-	printf("Happy Coding~~\n");
-}
-#endif
-
-
-void selectionSort(int *list, int n)
-{
+void selectionSort(int *list, int n) {
 	int i, j, min, temp;
 	for (i = 0; i < n - 1; i++) {
 		min = i;
@@ -74,36 +41,25 @@ void selectionSort(int *list, int n)
 	}
 }
 
-int* generateRandList(int n)
-{
-	int i, j;
-    int* randList = NULL;
+#if 0
+void printList(int *list, int N); // prototype
 
-	randList = (int*)malloc(sizeof(int) * n);
-    assert(randList != NULL);
+int main() {
+	int list[] = { 3, 4, 1, 7, 9, 6, 5, 2, 8, 0, 10, -1 };
+	const int N = sizeof(list)/sizeof(list[0]);
 
-	for(i = 0; i < n; i++){
-        randList[i] = rand() % n;
+	printf("UNSORTED: \n");
+  printList(list, N);
+	selectionSort(list, N);
+	printf("SORTED: \n");
+  printList(list, N);
 
-        j = 0;
-        while(j < i){
-            if(randList[i] == randList[j]){
-                randList[i] = rand() % n;
-                j = 0;
-                continue;
-            }
-            j++;
-        }
-    }
-
-    return randList;
+  printf("Happy Coding~~\n");
 }
 
-void printList(int* list, int n)
-{
-
-	for(int i = 0; i < n; i++){
+void printList(int *list, int N) {
+	for (int i = 0; i < N; i++)
 		printf("%d ", list[i]);
-	}
 	printf("\n");
 }
+#endif

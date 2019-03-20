@@ -61,7 +61,6 @@ int main() {
 	print_list(list, N);
 
 	delete[] list;
-	// system("pause");
 	cout << "Happy Coding~~\n";
 }
 #endif

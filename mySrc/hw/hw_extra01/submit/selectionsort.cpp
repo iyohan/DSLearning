@@ -6,8 +6,8 @@
 using namespace std;
 
 void selectionSort(int *list, int n);
-void printList(int* list, int n);
-int* generateRandList(int n);
+//void printList(int* list, int n);
+//int* generateRandList(int n);
 
 #if 0
 int main() {
@@ -34,21 +34,21 @@ int main() {
 #endif
 
 
-void selectionSort(int *list, int n)
+void selectionSort(int *list, int n, int (*comp)(int, int))
 {
-	int i, j, min, temp;
+	int i, j, key, temp;
 	for (i = 0; i < n - 1; i++) {
-		min = i;
+		key = i;
 		for (j = i + 1; j < n; j++)
-			if (list[j] < list[min])
-				min = j;
+			if (comp(list[j], list[key]) < 0)
+				key = j;
 		// Swap min found with the first one of unsorted
 		temp = list[i];
-		list[i] = list[min];
-		list[min] = temp;
+		list[i] = list[key];
+		list[key] = temp;
 	}
 }
-
+/*
 int* generateRandList(int n)
 {
 	int i, j;
@@ -81,3 +81,4 @@ void printList(int* list, int n)
 	}
 	cout << endl;
 }
+*/

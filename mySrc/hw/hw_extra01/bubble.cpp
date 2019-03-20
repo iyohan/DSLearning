@@ -20,13 +20,13 @@ using namespace std;
 #define DPRINT(func) ;
 #endif
 
-void bubbleSort(int *list, int n) {
+void bubbleSort(int *list, int n, int (*comp)(int, int)) {
 	int i, j, temp;
 
 	for (i = 0; i < n - 1; i++) {
 		// last i elements are already in place
 		for (j = 0; j < n - i - 1; j++)
-			if (list[j] > list[j + 1]) {
+			if (comp(list[j], list[j + 1]) > 0) {
 				temp = list[j];
 				list[j] = list[j + 1];
 				list[j + 1] = temp;
@@ -43,7 +43,7 @@ int main() {
 	cout << "UNSORTED: " << endl;
 	for (int i = 0; i < N; i++) cout << list[i] << " "; cout << endl;
 
-	bubbleSort(list, N);
+	//bubbleSort(list, N);
 
 	cout << "SORTED: " << endl;
 	for (int i = 0; i < N; i++) cout << list[i] << " "; cout << endl;

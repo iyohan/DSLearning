@@ -23,7 +23,7 @@ using namespace std;
 #define DPRINT(func) ;
 #endif
 
-void insertionSort(int *list, int n) {
+void insertionSort(int *list, int n, int (*comp)(int, int)){
 	int i, j, key;
 
 	for (i = 1; i < n; i++) {
@@ -31,7 +31,7 @@ void insertionSort(int *list, int n) {
 		j = i - 1;
 		// move elements of list[0..i-1], that are greater than key,
 		// to one position ahead of their current position
-		while (j >= 0 && list[j] > key) {
+		while (j >= 0 && comp(list[j], key) > 0) { 
 			list[j + 1] = list[j];
 			j = j - 1;
 		}

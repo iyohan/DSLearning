@@ -33,11 +33,11 @@
  * OUTPUT:
  *		returns the array index of `key` in the list'
  *		returns -1 or something else?
- * NOTE: 
+ * NOTE:
  * If the key is not found, low is the insertion point where a key would be
  * inserted to maintain the order of the list.  It is more useful to return
  * the insertion point than -1.  The method must return a negative value to
- * indicate that the key is not in the list. Can it simply return -low? 
+ * indicate that the key is not in the list. Can it simply return -low?
  */
 
 #include <iostream>
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 	cout << endl;
 
 	// randomly generate numbers to search between
-	// list[0] = 3 and list[size-1] = 20, inclusviely. 
+	// list[0] = 3 and list[size-1] = 20, inclusviely.
 	// do this by 'size' times.
 	// print the results as shown in binsearchx.exe.
 
