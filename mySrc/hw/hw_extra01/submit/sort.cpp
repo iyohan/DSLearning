@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 
 	N = getSampleSize(argc, argv);
 	list = generateRandList(N);
-	for(test_option = 0; test_option < 4; test_option++)
+	for(test_option = 0; test_option < 4; test_option++)  // MN 없애야 한다.
 		testCase(list, N, test_option);
 
 	delete[] list;
@@ -47,7 +47,7 @@ int getSampleSize(int argc, char* argv[])
 		N = GetInt("Enter a number of samples to sort: ");
 	}
 	else{
-		N =  atoi(argv[1]);
+		N =  atoi(argv[1]); // atoi 쓰지 말자.
 		if(N < 1){
 			cout << "Your input (" << N << ") cannot be processed." << endl;
 			N = GetInt("Enter a number of samples to sort: ");
@@ -86,14 +86,16 @@ void testCase(int* list, int N, int test_option)
 	string sorted[] = {"NOT", "Up ", "Dn ", "  "};
 	int (*compOption[])(int, int) = {acscending, descending};
 	void (*sortFn[])(int*, int, int (*)(int, int)) = {bubbleSort, insertionSort, selectionSort, quickSort};
+	// size_f = sizeof(sortFn) / sizeof(sortFn[0]);
 	const int WIDTH = 6;
 
 	cout << "Test Case: " << option[test_option] << endl;
-	for(i = 0; i < 30; i++) cout << "-";
+	for(i = 0; i < 30; i++) cout << "-"; //30이란 MN 없애기.
 	cout << endl;
 	//cout.width[WIDTH];
 	//cout.fill(" ");
 
+//전체적으로 MN 없애기
 	switch (test_option){
 		case 0:
 			start = clock();
@@ -138,8 +140,9 @@ void testCase(int* list, int N, int test_option)
 			break;
 
 		case 3:
-			for(i = 0; i < 4; i++){
-				for(j = 0; j <3; j++){
+			//for(i = 0; i < 4; i++){
+			for(i = 0; i < size_f; i++){ //MN 없애는 과정.
+				for(j = 0; j <3; j++){ // MN 없애자.
 					start = clock();
 					cout << sorted[j] << "sorted[";
 					cout.width(WIDTH);

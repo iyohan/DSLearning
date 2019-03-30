@@ -1,3 +1,5 @@
+
+
 /*
  * This program tests binary_search():
  *
@@ -32,22 +34,25 @@
 #include <vector>
 using namespace std;
 
-void printList(int *list, int N, int max_print = 10, int per_line = 5);
+void printList(int* list, int N, int max_print = 10, int per_line = 5);
 void quickSort(int *a, int n);
-int binary_search(int *list, int key, int size);
+int binary_search(int* list, int key, int size);
 
 int main(int argc, char *argv[]) {
 	setvbuf(stdout, NULL, _IONBF, 0);		// print out immediately if any
 	setvbuf(stdin,  NULL, _IONBF, 0);		// read input immediately if any
 
-	vector<int> list;
+	vector<int> vlist;
+	string line;
 	int keyin;
+	int i;
 	cout << "Enter numbers to sort(q to quit): ";
 	while (cin >> keyin) {
-		cout << "your code here\n"		// adding to the end
+		vlist.push_back(keyin);		// adding to the end
 	}
 
-	int N = list.size();
+	int N = vlist.size();
+	int* list = &vlist[0];
 	cout << "\nUNSORTED[" << N << "]:\n";
 	printList(&list[0], N);
 	quickSort(&list[0], N);
@@ -57,19 +62,35 @@ int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));	// comment out when debugging
 
 	// get a random number to use as a key for testing the binary search.
-	cout << "your code here\n"
+	int list_size = vlist.size();
+	int key = rand() % list_size;
 
 	cout << "\n\t" << key << " To Be Found.\n";
 
 	// invoke bineary_search to find key in the list.
 	// display the result
-
-  cout << "your code here\n"
+	int index = binary_search(list, key, list_size);
+	if(index < 0)
+		cout << "\t" << key << "\tis NOT@list[" << -index << "]\n";
+	else
+		cout << "\t" << key << "\tis @list[" << index << "]\n";
 
 	// print a few data around a possible key index or -index to check your output.
-	int extra = 4;						// a magic number
+	int extra = 4; 						// a magic number
+	if(index < 0) index = -index;
+	if(index - extra > 0){
+		for(i = index - extra; i < index; i++){
+			cout << "\t[" << i << "]" << "=" << list[i] << endl;
+		}
+	}
+	else{
+		for(i = index; i < index + extra; i++){
+			cout << "\t[" << i << "]" << "=" << list[i] << endl;
+		}
+	}
 
-	cout << "your code here\n"
+
+
 
 	cout << "Happy Coding~~\n";
 	// system("pause");
