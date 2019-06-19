@@ -1,0 +1,45 @@
+숙제에서 많이 낼거임
+time-complexed 생각하기
+doubley-linkedlist 부터
+avl tree
+bstree
+graph가 많이 나옴 오지게 나올듯
+heap 확실히 알아야됨
+edge list, adj list, adj matrix의 장단점을 알기
+--> 주어진 문제에 맞는거 사용
+
+DFS <--> BFS 장단점 둘을 사용해서 coloring하는거 (숙제마냥)
+graph의 timecomplexity 계산 (V, E로 표현함)
+7page - 
+anytime 공부하기
+단답형 많음
+전체 coding하기 - statement를 주고 채우는 것 - 흐름을 알고 있으면 됨
+AVL에서 큰 코딩 나올것같은데
+heapify에서 max랑 min 알아두기 - sink할 때 어떤 일이 일어나는지
+STL? 안나오모니이다
+
+--------------------------------------------------------------------------------------------------------
+
+
+-50%가 graph문제이다. 
+-페이지 수는 7페이지인데 다 한글 문제.
+-TF문제는 틀린거 답하면 문제 내에서 감점. 6문제 등인듯.
+-이론적인건 time complexity가 많다. tree와 graph의 차이, 상황을 주고 무엇이 좋냐
+-adjacency matrix, edge list, ??등의 3가지 그래프 구현법이 있는데 무슨 상황이 좋은지
+-doubly linked list. 중간고사 이후의 linked list이다.
+-avl-->조그만 function 완성하기..? 크게?
+-숙제 관련된 ppt
+-heap에서는 sink와 swim에서 어떤일이 일어나는지 정확하게 알아야한다!!
+어떻게 비교하는지 등을. 코딩 하라고 하지는 않는다. less나 more등을 안에서 하는데
+그것과 heapify 어떻게 하는지. 용도가 무엇인지.
+3.5점 짜리 minheap,maxheap 문제 나오는데 까다롭다. 그림 그리는 숙제 생각하기.
+-코딩하는건 1점 짜리 한 문제--> function쓰는 간단한거
+-그 외에 코딩 하는건 약간씩, 단답형/객관식으로. 단답형 몇개 있는듯. 
+-DFS,BFS는 코드를 다 주면 골라서 집어 넣는거다(코드 흐름 알고 있으면 골라서 넣을수 있다)
+DFS,BFS에서 많이 나온다
+-adjacency list, graph만들어 내기 등
+-숙제에서는 돌리면 답이나오는데, 실제 그래프 보고 직접 DFS,BFS 계산 할줄 알아야.
+-graph관련된 time complexity는 O(V),O(E),O(V+E),O(V*E)등으로 하는데 이거를 구별 할줄 알아야.
+ 구글링 하면 많이 나오는듯
+-25점 만점+1점 보너스문제(사탕 문제) 
+-STL은 안나온다.
